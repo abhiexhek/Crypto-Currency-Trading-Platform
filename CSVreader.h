@@ -1,25 +1,25 @@
-#ifndef CSVreader_h
-#define CSVreader_h
-
 #pragma once
+
 #include "OrderBookEntry.h"
 #include <vector>
 #include <string>
 
+
 class CSVreader
 {
     public:
-    CSVreader();
+     CSVreader();
 
-    static std::vector<OrderBookEntry> readCSV(std::string csvFile);
-    static std::vector<std::string> tokenise(std::string csvLine, char separator);
-    static OrderBookEntry stringsToOBE(std::string timestamp,
-                                        std::string product,
-                                        OrderBookType OrderBookType,
-                                        std::string price,
-                                        std::string amount);
+     static std::vector<OrderBookEntry> readCSV(std::string csvFile);
+     static std::vector<std::string> tokenise(std::string csvLine, char separator);
+    
+     static OrderBookEntry stringsToOBE(std::string price, 
+                                        std::string amount, 
+                                        std::string timestamp, 
+                                        std::string product, 
+                                        OrderBookType OrderBookType);
+
     private:
-    static OrderBookEntry stringsToObe(std::vector<std::string> strings);
-
+     static OrderBookEntry stringsToOBE(std::vector<std::string> strings);
+     
 };
-#endif /* CSVreader_hpp */
